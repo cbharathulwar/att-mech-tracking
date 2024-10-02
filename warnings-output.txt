@@ -1,0 +1,162 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.9, pytest-8.3.2, pluggy-1.5.0
+rootdir: /home/cbharathulwar/higgsgnn/main-code/gnn_tracking
+configfile: pyproject.toml
+testpaths: tests
+plugins: cov-5.0.0, anyio-4.4.0, hydra-core-1.3.2
+collected 86 items
+
+tests/test_cluster_metrics.py ................                           [ 18%]
+tests/test_clusterscanners.py ....                                       [ 23%]
+tests/test_data_transformer.py ..                                        [ 25%]
+tests/test_edge_classification.py .                                      [ 26%]
+tests/test_edge_classifier.py ...                                        [ 30%]
+tests/test_efficiency_plots.py ...                                       [ 33%]
+tests/test_fastrescanner.py .                                            [ 34%]
+tests/test_graph_analysis.py ......                                      [ 41%]
+tests/test_graph_construction.py ...                                     [ 45%]
+tests/test_k_scanner.py .                                                [ 46%]
+tests/test_latent_analysis.py .                                          [ 47%]
+tests/test_log.py ..                                                     [ 50%]
+tests/test_losses.py .........                                           [ 60%]
+tests/test_mlp.py ..                                                     [ 62%]
+tests/test_nomenclature.py ..                                            [ 65%]
+tests/test_plotting.py .                                                 [ 66%]
+tests/test_plotutils.py .                                                [ 67%]
+tests/test_point_cloud_builder.py .......                                [ 75%]
+tests/test_tcn_training.py ..............                                [ 91%]
+tests/test_test_data.py .                                                [ 93%]
+tests/test_versioning.py .                                               [ 94%]
+tests/test_lightning_from_config_training.py .....                       [100%]
+
+=============================== warnings summary ===============================
+src/gnn_tracking/utils/loading.py:251
+  /home/cbharathulwar/higgsgnn/main-code/gnn_tracking/src/gnn_tracking/utils/loading.py:251: PytestCollectionWarning: cannot collect test class 'TestTrackingDataModule' because it has a __init__ constructor (from: tests/test_tcn_training.py)
+    class TestTrackingDataModule(LightningDataModule):
+
+tests/test_tcn_training.py:22
+  /home/cbharathulwar/higgsgnn/main-code/gnn_tracking/tests/test_tcn_training.py:22: PytestCollectionWarning: cannot collect test class 'TestTrainCase' because it has a __init__ constructor (from: tests/test_tcn_training.py)
+    @dataclass
+
+tests/test_plotutils.py::test_plot_baseclass
+  /home/cbharathulwar/higgsgnn/main-code/gnn_tracking/src/gnn_tracking/analysis/plotutils.py:39: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+    self.ax.legend()
+
+tests/test_tcn_training.py: 14 warnings
+tests/test_lightning_from_config_training.py: 5 warnings
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+
+tests/test_tcn_training.py: 27 warnings
+tests/test_lightning_from_config_training.py: 8 warnings
+  /home/cbharathulwar/higgsgnn/main-code/gnn_tracking/src/gnn_tracking/utils/lightning.py:171: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at /opt/conda/conda-bld/pytorch_1711403378171/work/aten/src/ATen/native/ReduceOps.cpp:1760.)
+
+tests/test_tcn_training.py: 14 warnings
+tests/test_lightning_from_config_training.py: 5 warnings
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+
+tests/test_tcn_training.py: 14 warnings
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py:298: The number of training batches (1) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+tests/test_tcn_training.py::test_train[t6]
+tests/test_tcn_training.py::test_train[t7]
+tests/test_tcn_training.py::test_train[t8]
+tests/test_tcn_training.py::test_train[t9]
+tests/test_tcn_training.py::test_train[t10]
+tests/test_tcn_training.py::test_train[t11]
+tests/test_tcn_training.py::test_train[t12]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/pytorch_lightning/utilities/parsing.py:208: Attribute 'ec' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['ec'])`.
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file0]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/wandb/analytics/sentry.py:90: SentryHubDeprecationWarning: `sentry_sdk.Hub` is deprecated and will be removed in a future major release. Please consult our 1.x to 2.x migration guide for details on how to migrate `Hub` usage to the new API: https://docs.sentry.io/platforms/python/migration/1.x-to-2.x
+    self.hub = sentry_sdk.Hub(client)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file0]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/lightning_fabric/utilities/seed.py:42: No seed found, seed set to 0
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file0]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file0]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.tensorboard.TensorBoardLogger object at
+      0x7fd0dc131010>
+
+    warning(val)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file0]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file0]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.wandb.WandbLogger object at 0x7fd0dd94e250>
+
+    warning(val)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file1]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file2]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file3]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file4]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/pytorch_lightning/loggers/wandb.py:396: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file1]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file1]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.tensorboard.TensorBoardLogger object at
+      0x7fd0de061690>
+
+    warning(val)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file1]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file1]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.wandb.WandbLogger object at 0x7fd0dd953e90>
+
+    warning(val)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file2]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file2]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.tensorboard.TensorBoardLogger object at
+      0x7fd0dda13110>
+
+    warning(val)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file2]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file2]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.wandb.WandbLogger object at 0x7fd0dda12e50>
+
+    warning(val)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file3]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file3]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.tensorboard.TensorBoardLogger object at
+      0x7fd0dd93e450>
+
+    warning(val)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file3]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file3]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.wandb.WandbLogger object at 0x7fd0dd93cbd0>
+
+    warning(val)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file3]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: No negative samples in targets, false positive value should be meaningless. Returning zero tensor in false positive score
+    warnings.warn(*args, **kwargs)  # noqa: B028
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file4]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file4]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.tensorboard.TensorBoardLogger object at
+      0x7fd0ddd00ad0>
+
+    warning(val)
+
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file4]
+tests/test_lightning_from_config_training.py::test_train_from_config[config_file4]
+  /home/cbharathulwar/micromamba/envs/gnndep/lib/python3.11/site-packages/jsonargparse/_typehints.py:1463: JsonargparseWarning:
+      Unable to serialize instance <pytorch_lightning.loggers.wandb.WandbLogger object at 0x7fd0ddd02910>
+
+    warning(val)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 86 passed, 124 warnings in 42.20s =======================
