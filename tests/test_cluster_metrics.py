@@ -1,7 +1,7 @@
 # ruff: noqa: T201
 
-import dataclasses  # module to store data in classes
-import os  # interact with os
+import dataclasses
+import os
 
 import numpy as np
 import pytest
@@ -313,18 +313,19 @@ def test_fix_cluster_metrics():
             "https://github.com/gnn-tracking/gnn_tracking/issues/349 "
             "for more details."
         )
-
     rng = np.random.default_rng(0)
     n_samples = 50
     n_particles = 20
     truth = rng.integers(0, n_particles, size=n_samples)
     predicted = truth + rng.integers(0, 4, size=n_samples)
-    pt_thlds = [0, 0.5, 0.9]
+    pt_thlds = [
+        0,
+        0.5,
+        0.9,
+    ]
     pts = rng.uniform(0, 3, size=n_samples)[truth]
     reconstructable = rng.choice([True, False], size=n_particles)[truth]
-
     print(truth.sum(), predicted.sum(), pts.sum(), reconstructable.sum())
-
     r = tracking_metrics(
         truth=truth,
         predicted=predicted,
@@ -334,7 +335,6 @@ def test_fix_cluster_metrics():
         pt_thlds=pt_thlds,
         predicted_count_thld=3,
     )
-
     expected = {
         0: {
             "n_particles": 10,
@@ -367,8 +367,5 @@ def test_fix_cluster_metrics():
             "fake_lhc": 1.0,
         },
     }
-
-    # Check if the result matches the expected output
     for thld in pt_thlds:
-        print(f"Threshold {thld}: obtained = {r[thld]}, expected = {expected[thld]}")
         assert r[thld] == approx(expected[thld])
